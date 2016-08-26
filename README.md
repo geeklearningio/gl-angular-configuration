@@ -24,7 +24,8 @@ angular.module('mainModuleName', ['ionic', 'gl-angular-configuration']){
 # How to use
 
 ## Dynamically load the configuration.json file (optional)
-remove the automatic bootstrap of your angular app. You can do it by Removing the `ng-app` tag of your `index.html` file.
+Add a `configuration.json` file at the root of your project.
+Remove the automatic bootstrap of your angular app. You can do it by Removing the `ng-app` tag of your `index.html` file.
 It will allow you to boostrap it manually after the json has been loaded.
 ```
 <html ng-app="testApp">
