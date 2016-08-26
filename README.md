@@ -57,4 +57,20 @@ export class Config {
 }
 ```
 
+## How to use the test app
+the test app does not have the package as a dependency. It allows you to make changes directly to the package and use it in your test app.
+
+You need to link the package locally.
+At the root of the project (containing the `package` and the `test-app` folders) type this in the terminal:
+```
+npm link
+```
+It will add `gl-angular-configuration` as a global npm module.
+
+Then go in the test-app folder and type this:
+```
+npm link gl-angular-configuration
+```
+It will link it to the test-app.
+
 
