@@ -1,5 +1,5 @@
 'use strict';
-import {ConfigurationProvider} from "../../../package/src/ConfigurationProvider";
+import {ConfigurationProvider} from "gl-angular-configuration/package/src/ConfigurationProvider";
 
 interface ITestAppConfiguration {
     env: string
