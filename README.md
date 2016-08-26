@@ -17,7 +17,7 @@ There is a test app using this Provider to show how to configure and use it.
 3) In your application's main module, inject the dependency `gl-angular-configuration` in order to use the Provider.
 ```
 angular.module('mainModuleName', ['ionic', 'gl-angular-configuration']){
-//
+
 }
 ```
 
