@@ -10,6 +10,7 @@
     "webpack:watch": "webpack --config webpack.fastcss.config.js --watch --env development",
     "fastcss": "gulp watch",
     "serve": "webpack --config webpack.development.config.js --watch  --env development",
+    "serve2": "webpack --config webpack.development.config.js --watch",
     "serve:production": "webpack --config webpack.production.config.js --watch --env production"
   },
   "author": "Geek Learning",
