@@ -12,7 +12,7 @@ var autoprefixer = require('autoprefixer');
 var ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-module.exports = utils.config({
+module.exports = utils.configNoFastcss({
     plugins: [
         new ngAnnotatePlugin({
             add: true

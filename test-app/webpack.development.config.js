@@ -8,7 +8,7 @@ var utils = require('./webpack.utils');
 
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-module.exports = utils.config({
+module.exports = utils.configNoFastcss({
     devtool: 'source-map',
     module: {
         loaders: [{

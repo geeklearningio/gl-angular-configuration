@@ -4,7 +4,6 @@
 
 'use strict';
 
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -25,8 +24,7 @@ for (var i = 0; i < process.argv.length; i++) {
 module.exports = {
     entry: {
         app: [
-            './src/app/index.module.ts',
-            './src/app/style.scss'
+            './src/app/index.module.ts'
         ]
     },
     output: {
@@ -49,12 +47,6 @@ module.exports = {
                 to: path.join(__dirname, "www/configuration.json")
             }
         ]),
-        new HtmlWebpackPlugin({
-            pkg: require('./package.json'),
-            template: path.join(__dirname, 'src/app/index.cordova.html'),
-            inject: 'body',
-            hash: true
-        }),
         new BrowserSyncPlugin({
             host: 'localhost',
             port: 8080,

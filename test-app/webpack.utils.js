@@ -6,6 +6,7 @@
 
 var _ = require('lodash');
 var baseConfig = require('./webpack.base.config');
+var noFastCssBaseConfig = require('./webpack.nofastcss.config');
 
 module.exports = {
     customizer: function (objValue, srcValue) {
@@ -16,6 +17,11 @@ module.exports = {
 
     config: function (customization) {
         return _.mergeWith(baseConfig, customization, module.exports.customizer);
+    },
+
+    configNoFastcss: function (customization) {
+        var mergedConfig = _.mergeWith(baseConfig, customization, module.exports.customizer);
+        return _.mergeWith(noFastCssBaseConfig, mergedConfig, module.exports.customizer);
     }
 };
 

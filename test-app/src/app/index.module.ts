@@ -12,7 +12,7 @@ import {MainController} from './views/main/MainController.ts';
 import {Config} from  './index.config.ts';
 import {RouterConfig} from  './index.route.ts';
 import {RunBlock} from  './index.run.ts';
-import {loadConfigurationJSON} from "gl-angular-configuration/package/src/ConfigurationProvider";
+import {loadConfigurationJSON} from "gl-angular-configuration/package/src/ConfigurationProvider.ts";
 
 exports = angular.module('testApp', [
     'ionic',
