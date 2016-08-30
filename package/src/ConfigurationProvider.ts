@@ -30,7 +30,7 @@ export class ConfigurationProvider<T> {
      * Add a default object that will only add params that aren't already specified
      * @param obj
      */
-    public addDefaultObject(obj: T) {
+    public addDefaultConfiguration(obj: T) {
         if (obj) {
             this.mergedConfiguration = <T>merge(obj, this.mergedConfiguration);
         }
