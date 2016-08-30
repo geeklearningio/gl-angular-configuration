@@ -29,6 +29,16 @@ export class ConfigurationProvider<T> {
             }
         }
     }
+
+    /**
+     * Add a default object that will only add params that aren't already specified
+     * @param obj
+     */
+    public addDefaultObject(obj: any) {
+        if (obj) {
+            this.mergedConfiguration = <T>merge(obj, this.mergedConfiguration);
+        }
+    }
 }
 
 export function loadConfigurationJSON(callback) {
