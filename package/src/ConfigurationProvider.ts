@@ -8,19 +8,15 @@ export class ConfigurationProvider<T> {
     constructor() {
         this.mergedConfiguration = <T>{};
 
-        this.addObject((<any>window).webConfig, true);
-        this.addObject((<any>window).configuration, true);
+        this.addConfiguration((<any>window).webConfig, true);
+        this.addConfiguration((<any>window).configuration, true);
     }
 
     public $get($q: angular.IQService) {
         return this.mergedConfiguration;
     }
 
-    public get(): T {
-        return this.mergedConfiguration;
-    }
-
-    public addObject(obj: any, optional?: boolean) {
+    public addConfiguration(obj: T, optional?: boolean) {
         if (obj) {
             this.mergedConfiguration = <T>merge(this.mergedConfiguration, obj);
         } else {
@@ -34,7 +30,7 @@ export class ConfigurationProvider<T> {
      * Add a default object that will only add params that aren't already specified
      * @param obj
      */
-    public addDefaultObject(obj: any) {
+    public addDefaultObject(obj: T) {
         if (obj) {
             this.mergedConfiguration = <T>merge(obj, this.mergedConfiguration);
         }
