@@ -24,7 +24,10 @@ angular.module('mainModuleName', ['ionic', 'gl-angular-configuration']){
 # How to use
 
 ## Dynamically load the configuration.json file (optional)
-Add a `configuration.json` file at the root of your project.
+Add a `configuration.json` file at the root of your project. 
+
+Note: If you look at the webpack config (`webpack.base.config.js`) of the test-app provided with the package, you'll see that I use the `CopyWebpackPlugin` to copy the right configuration named after a `env` argument passed to the webpack cli. The command line I use is a npm script. You can find it in the `package.json` file of the test-app.
+
 Remove the automatic bootstrap of your angular app. You can do it by Removing the `ng-app` tag of your `index.html` file.
 It will allow you to boostrap it manually after the json has been loaded.
 ```
