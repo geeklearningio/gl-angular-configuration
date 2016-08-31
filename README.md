@@ -1,5 +1,5 @@
 # Introduction
-This is a confuguration package for Angular. 
+This is a configuration package for Angular. 
 It allows you to dynamically load a json file at the root of your project.
 It also provides a provider that allows you to add configuration values in the config function of your Angular app.
 There is a test app using this Provider to show how to configure and use it.
@@ -42,8 +42,9 @@ loadConfigurationJSON(() => {
 });
 ```
 
-## Add a configuration at config
-In the config function of your Angular application, inject the `ConfigurationProvider` and call the `addObject` function. 
+## Add a configuration at config state
+In the config function of your Angular application, inject the `ConfigurationProvider` and call the `addConfiguration` function.
+You can also add a default configuration by calling `addDefaultConfiguration`. This function only changes the priority of the configuration loaded. It means that if the current configuration has a "env" param and the default configuration has also an "env" param, then it will keep the param of the current configuration, not the default one.
 You can specify the type of your configuration object in the Typescript version.
 
 ```
