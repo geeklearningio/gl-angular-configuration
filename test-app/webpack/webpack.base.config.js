@@ -11,6 +11,8 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 var webpack = require('webpack');
 var path = require('path');
 
+__dirname = __dirname + '/../';
+
 var jsonConfigurationFile;
 
 for (var i = 0; i < process.argv.length; i++) {
@@ -24,7 +26,7 @@ for (var i = 0; i < process.argv.length; i++) {
 module.exports = {
     entry: {
         app: [
-            './src/app/index.module.ts'
+            path.join(__dirname, "src/app/index.module.ts")
         ]
     },
     output: {

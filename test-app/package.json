@@ -4,14 +4,13 @@
   "description": "Test app for the Geek Learning Angular Configuration package",
   "main": "index.js",
   "scripts": {
-    "build:dev": "webpack --config webpack.development.config.js --env development",
-    "build:production": "webpack --config webpack.production.config.js --env production",
+    "build:dev": "webpack --config webpack/webpack.development.config.js --env development",
+    "build:production": "webpack --config webpack/webpack.production.config.js --env production",
     "serve:fastcss": "npm-run-all --parallel fastcss webpack:watch",
-    "webpack:watch": "webpack --config webpack.fastcss.config.js --watch --env development",
+    "webpack:watch": "webpack --config webpack/webpack.fastcss.config.js --watch --env development",
     "fastcss": "gulp watch",
-    "serve": "webpack --config webpack.development.config.js --watch  --env development",
-    "serve2": "webpack --config webpack.development.config.js --watch",
-    "serve:production": "webpack --config webpack.production.config.js --watch --env production"
+    "serve": "webpack --config webpack/webpack.development.config.js --watch  --env development",
+    "serve:production": "webpack --config webpack/webpack.production.config.js --watch --env production"
   },
   "author": "Geek Learning",
   "license": "MIT",

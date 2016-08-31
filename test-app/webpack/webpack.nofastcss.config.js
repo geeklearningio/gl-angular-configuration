@@ -10,15 +10,17 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var path = require('path');
 
+__dirname = __dirname + '/../';
+
 module.exports = {
     entry: {
         app: [
-            './src/app/style.scss'
+            path.join(__dirname, "src/app/style.scss")
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            pkg: require('./package.json'),
+            pkg: require(path.join(__dirname, "package.json")),
             template: path.join(__dirname, 'src/app/index.cordova.html'),
             inject: 'body',
             hash: true
