@@ -12,6 +12,7 @@ export class ConfigurationProvider<T> {
         this.addConfiguration((<any>window).configuration, true);
     }
 
+    /* @ngInject */
     public $get($q: angular.IQService) {
         return this.mergedConfiguration;
     }
