@@ -44,7 +44,7 @@ export function loadConfigurationJSON(callback) {
     xobj.open('GET', 'configuration.json', true); // Replace 'my_data' with the path to your file
     xobj.onreadystatechange = function () {
         if (xobj.readyState === 4) {
-            if ((xobj.status === 200 || xobj.status === 200) && xobj.responseText) {
+            if ((xobj.status === 200 || xobj.status === 0) && xobj.responseText) {
                 (<any>window).configuration = JSON.parse(xobj.responseText);
             }
             callback();
