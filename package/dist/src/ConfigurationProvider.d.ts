@@ -8,6 +8,11 @@ export declare class ConfigurationProvider<T> {
      * @param obj
      */
     addDefaultConfiguration(obj: T): void;
+    /**
+     * Get the configuration object at config.
+     * It can be useful to configure other providers with the loaded configuration
+     * @returns {T}
+     */
     getConfiguration(): T;
 }
 export declare function loadConfigurationJSON(callback: any): void;

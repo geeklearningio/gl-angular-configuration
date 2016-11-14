@@ -84,6 +84,11 @@
 	            this.mergedConfiguration = merge(obj, this.mergedConfiguration);
 	        }
 	    };
+	    /**
+	     * Get the configuration object at config.
+	     * It can be useful to configure other providers with the loaded configuration
+	     * @returns {T}
+	     */
 	    ConfigurationProvider.prototype.getConfiguration = function () {
 	        return this.mergedConfiguration;
 	    };
@@ -95,8 +100,8 @@
 	    xobj.overrideMimeType("application/json");
 	    xobj.open('GET', 'configuration.json', true); // Replace 'my_data' with the path to your file
 	    xobj.onreadystatechange = function () {
-	        if (xobj.readyState == 4) {
-	            if (xobj.status == 200) {
+	        if (xobj.readyState === 4) {
+	            if ((xobj.status === 200 || xobj.status === 0) && xobj.responseText) {
 	                window.configuration = JSON.parse(xobj.responseText);
 	            }
 	            callback();
