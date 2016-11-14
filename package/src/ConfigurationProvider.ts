@@ -14,7 +14,7 @@ export class ConfigurationProvider<T> {
 
     /* @ngInject */
     public $get($q: angular.IQService) {
-        return this.mergedConfiguration;
+        return this.getConfiguration();
     }
 
     public addConfiguration(obj: T, optional?: boolean) {
@@ -35,6 +35,15 @@ export class ConfigurationProvider<T> {
         if (obj) {
             this.mergedConfiguration = <T>merge(obj, this.mergedConfiguration);
         }
+    }
+
+    /**
+     * Get the configuration object at config.
+     * It can be useful to configure other providers with the loaded configuration
+     * @returns {T}
+     */
+    public getConfiguration() {
+        return this.mergedConfiguration;
     }
 }
 

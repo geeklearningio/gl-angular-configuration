@@ -57,16 +57,15 @@
 	    /* @ngInject */
 	    function ConfigurationProvider() {
 	        this.mergedConfiguration = {};
-	        this.addObject(window.webConfig, true);
-	        this.addObject(window.configuration, true);
+	        this.addConfiguration(window.webConfig, true);
+	        this.addConfiguration(window.configuration, true);
 	    }
+	    /* @ngInject */
 	    ConfigurationProvider.prototype.$get = function ($q) {
-	        return this.mergedConfiguration;
+	        return this.getConfiguration();
 	    };
-	    ConfigurationProvider.prototype.get = function () {
-	        return this.mergedConfiguration;
-	    };
-	    ConfigurationProvider.prototype.addObject = function (obj, optional) {
+	    ConfigurationProvider.prototype.$get.$inject = ["$q"];
+	    ConfigurationProvider.prototype.addConfiguration = function (obj, optional) {
 	        if (obj) {
 	            this.mergedConfiguration = merge(this.mergedConfiguration, obj);
 	        }
@@ -76,6 +75,18 @@
 	            }
 	        }
 	    };
+	    /**
+	     * Add a default object that will only add params that aren't already specified
+	     * @param obj
+	     */
+	    ConfigurationProvider.prototype.addDefaultConfiguration = function (obj) {
+	        if (obj) {
+	            this.mergedConfiguration = merge(obj, this.mergedConfiguration);
+	        }
+	    };
+	    ConfigurationProvider.prototype.getConfiguration = function () {
+	        return this.mergedConfiguration;
+	    };
 	    return ConfigurationProvider;
 	}());
 	exports.ConfigurationProvider = ConfigurationProvider;
@@ -84,9 +95,10 @@
 	    xobj.overrideMimeType("application/json");
 	    xobj.open('GET', 'configuration.json', true); // Replace 'my_data' with the path to your file
 	    xobj.onreadystatechange = function () {
-	        if (xobj.readyState == 4 && xobj.status == 200) {
-	            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-	            window.configuration = JSON.parse(xobj.responseText);
+	        if (xobj.readyState == 4) {
+	            if (xobj.status == 200) {
+	                window.configuration = JSON.parse(xobj.responseText);
+	            }
 	            callback();
 	        }
 	    };

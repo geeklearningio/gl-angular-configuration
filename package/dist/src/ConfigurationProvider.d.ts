@@ -2,7 +2,12 @@ export declare class ConfigurationProvider<T> {
     private mergedConfiguration;
     constructor();
     $get($q: angular.IQService): T;
-    get(): T;
-    addObject(obj: any, optional?: boolean): void;
+    addConfiguration(obj: T, optional?: boolean): void;
+    /**
+     * Add a default object that will only add params that aren't already specified
+     * @param obj
+     */
+    addDefaultConfiguration(obj: T): void;
+    getConfiguration(): T;
 }
 export declare function loadConfigurationJSON(callback: any): void;
