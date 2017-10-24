@@ -1,5 +1,5 @@
 ﻿declare var require: Function;
-var merge = require('lodash/merge');
+var merge = require("lodash/merge");
 
 export class ConfigurationProvider<T> {
     private mergedConfiguration: T;
@@ -47,10 +47,10 @@ export class ConfigurationProvider<T> {
     }
 }
 
-export function loadConfigurationJSON(callback) {
+export function loadConfigurationJSON(callback, configurationFileUrl: string = "configuration.json") {
     var xobj = new XMLHttpRequest();
     xobj.overrideMimeType("application/json");
-    xobj.open('GET', 'configuration.json', true); // Replace 'my_data' with the path to your file
+    xobj.open("GET", configurationFileUrl, true);
     xobj.onreadystatechange = function () {
         if (xobj.readyState === 4) {
             if ((xobj.status === 200 || xobj.status === 0) && xobj.responseText) {
@@ -66,5 +66,3 @@ declare var exports: any;
 
 exports = angular.module("gl-angular-configuration", [])
     .provider("configuration", ConfigurationProvider);
-
-

@@ -15,4 +15,4 @@ export declare class ConfigurationProvider<T> {
      */
     getConfiguration(): T;
 }
-export declare function loadConfigurationJSON(callback: any): void;
+export declare function loadConfigurationJSON(callback: any, configurationFileUrl?: string): void;
