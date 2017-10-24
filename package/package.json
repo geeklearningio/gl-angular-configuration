@@ -1,20 +1,41 @@
 {
-  "name": "gl-angular-configuration",
-  "version": "0.0.1",
-  "description": "Configuration module for Angular",
-  "scripts": {
-    "build": "webpack"
-  },
-  "author": "Geek Learning",
-  "license": "MIT",
-  "devDependencies": {
-    "awesome-typescript-loader": "^1.1.1",
-    "ng-annotate-webpack-plugin": "^0.1.3",
-    "typescript": "^1.8.10",
-    "typings": "^1.3.0",
-    "webpack": "^1.13.1"
-  },
-  "dependencies": {
-    "lodash": "^4.15.0"
-  }
+    "name": "gl-angular-configuration",
+    "version": "0.0.1",
+    "scripts": {
+        "build": "webpack"
+    },
+    "devDependencies": {
+        "awesome-typescript-loader": "^1.1.1",
+        "ng-annotate-webpack-plugin": "^0.1.3",
+        "typescript": "^1.8.10",
+        "typings": "^1.3.0",
+        "webpack": "^1.13.1"
+    },
+    "dependencies": {
+        "lodash": "^4.15.0"
+    },
+    "description": "A configuration package for Angular. It allows you to dynamically load a JSON file at the root of your project. It also provides a provider that allows you to add configuration values in the config function of your Angular app.",
+    "keywords": [
+        "angular",
+        "configuration",
+        "json",
+        "typescript"
+    ],
+    "homepage": "https://github.com/geeklearningio/gl-angular-configuration",
+    "bugs": "https://github.com/geeklearningio/gl-angular-configuration/issues",
+    "license": "MIT",
+    "author": {
+        "name": "Geek Learning",
+        "url": "http://geeklearning.io/"
+    },
+    "contributors": [{
+            "name": "Michel Vidailhet",
+            "url": "http://geeklearning.io/author/michel/"
+        },
+        {
+            "name": "Adrien Siffermann",
+            "url": "http://geeklearning.io/author/adrien/"
+        }
+    ],
+    "repository": "geeklearningio/gl-angular-configuration"
 }
